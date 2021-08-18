@@ -1,0 +1,185 @@
+//page names are placeholders
+var express = require('express');
+var path = require('path');
+var router = express.Router();
+
+var mysql = require('mysql');
+
+var connection = mysql.createConnection( {
+  //properties
+  host:'localhost',
+  user: 'root',
+  password: '',
+  database: '' //database name needed to be added here
+});
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+
+///////////pt register information -> database////////
+router.post('/submit-register', (req, res) => {
+
+  const pt_first_name= req.body.pt_first_name
+  const pt_last_name = req.body.pt_last_name
+  const pt_email= req.body.pt_email
+  const pt_password_hash = req.body.pt_password_hash
+  const pt_biography = req.body.pt_biography
+  const pt_date_of_birth = req.body.pt_date_of_birth
+  const pt_travel_radius = req.body.pt_travel_radius
+  const pt_gender = req.body.pt_gender
+  const pt_prior_experience = req.body.pt_prior_experience
+  const pt_muscle_group = req.body.pt_muscle_group
+  const pt_languages_spoken = req.body.pt_languages_spoken
+  const pt_training_location =req.body.pt_training_location
+  const pt_account_status = req.body.pt_account_status
+
+  connection.query("INSERT INTO trainers (pt_first_name, pt_last_name, pt_email, pt_password_hash, pt_biography, pt_date_of_birth, pt_travel_radius, pt_gender, pt_prior_experience, pt_muscle_group, pt_lanaguages_spoken, pt_training_location) VALUES ('"+req.body.pt_first_name+"','"+req.body.pt_last_name+"','"+req.body.pt_email+"','"+req.body.pt_password_hash+"','"+req.body.pt_biography+"','"+req.body.pt_date_of_birth+"','"+req.body.pt_travel_radius+"','"+req.body.pt_gender+"','"+req.body.pt_prior_experience+"','"+req.body.pt_muscle_group+"','"+req.body.pt_languages_spoken+"','"+req.body.pt_training_location+"','"+req.body.pt_account_status+"')",function(err, result)      
+{                                                      
+  if (err)
+     throw err;
+});
+
+  res.redirect('/index.html')
+});
+
+
+///////////client register information -> database////////
+router.post('/submit-register', (req, res) => {
+
+  const  c_first_name= req.body.c_first_name
+  const c_last_name = req.body.c_last_name
+  const c_email= req.body.c_email
+  const c_password_hash = req.body.c_password_hash
+  const c_date_of_birth = req.body.c_date_of_birth
+  const c_gender = req.body.c_gender
+  const c_addressID = req.body.c_addressID
+
+
+  connection.query("INSERT INTO clients (c_first_name, c_last_name, c_email, c_password_hash, c_date_of_birth, c_gender, c_addressID) VALUES ('"+req.body.c_first_name+"','"+req.body.c_last_name+"','"+req.body.c_email+"','"+req.body.c_password_hash+"','"+req.body.c_date_of_birth+"','"+req.body.c_addressID+"','"+req.body.c_gender+"')",function(err, result)      
+{                                                      
+  if (err)
+     throw err;
+});
+
+  res.redirect('/index.html')
+});
+
+
+///////////trainer availability information -> database////////
+router.post('/update_availability', (req, res) => {
+
+  const pt_date=req.body.pt_date
+  const  pt_start_time= req.body.pt_start_time
+  const pt_end_time = req.body.pt_end_time
+
+  connection.query("INSERT INTO trainer_availability (pt_date, pt_start_time, pt_end_time) VALUES ('"+req.body.pt_date+"','"+req.body.pt_start_time+"','"+req.pt_body.end_time+"')",function(err, result)      
+{                                                      
+  if (err)
+     throw err;
+});
+
+  res.redirect('/index.html')
+});
+
+
+///////////admin register information -> database////////
+router.post('/submit-register', (req, res) => {
+
+  const  a_first_name= req.body.a_first_name
+  const a_last_name = req.body.a_last_name
+  const a_password_hash = req.body.a_password_hash
+
+
+  connection.query("INSERT INTO admin (a_first_name, a_last_name, a_password_hash) VALUES ('"+req.body.a_first_name+"','"+req.body.a_last_name+"','"+req.body.a_password_hash+"')",function(err, result)      
+{                                                      
+  if (err)
+     throw err;
+});
+
+  res.redirect('/index.html')
+});
+
+
+///////////booking information -> database////////
+router.post('/submit-register', (req, res) => {
+
+const b_date=req.body.b_date
+  const  b_start_time= req.body.b_start_time
+  const b_end_time = req.body.b_end_time
+  const booking_status = req.body.booking_status
+
+
+  connection.query("INSERT INTO bookings (b_date, b_start_time, b_end_time,booking_status) VALUES ('"+req.body.b_date+"','"+req.body.b_start_time+"','"+req.body.b_end_time+"','"+req.body.booking_status+"')",function(err, result)      
+{                                                      
+  if (err)
+     throw err;
+});
+
+  res.redirect('/index.html')
+});
+
+
+/////////review/endorsement->webpage///////
+router.post('/submit-review', (req, res) => {
+
+  const rating = req.body.rating
+  const description = req.body.description
+ 
+    connection.query("INSERT INTO endorsements/reviews (rating, description) VALUES ('"+req.body.rating+"','"+req.body.description"')",function(err, result)      
+{                                                      
+  if (err)
+     throw err;
+});
+res.redirect('')
+});
+
+/*
+///////////////////////////////////////////////examples that are not in use (yet?)/////////////////////////////////////////////////////////////////////////////////////////
+  
+///////////booking -> webpage////////////////
+router.post('/submit-booking', (req, res) => {
+
+  const bookingdate = req.body.bookingdate
+  const numSeats = req.body.numSeats
+	console.log('date: ' + req.body.bookingdate);
+  //res.send(" date: "+ bookingdate+ " Number of seats " + numSeats)
+
+});
+
+
+
+
+/////login information -> webpage////////
+router.post('/submit-login', (req, res) => {
+  const Email = req.body.Email
+  const Password = req.body.Password
+	console.log('Email: ' + req.body.Email);
+  console.log('Password: ' + req.body.Password);
+
+  res.send(" Email: "+ Email+ " Password: " + Password)
+
+});
+
+
+
+//display account details////
+router.post('/submit-account-details', (req, res) => {
+
+   const  firstname= req.body.firstname
+   const lastname = req.body.lastname
+   const  Address= req.body.Address
+   const  Phone= req.body.Phone
+   const  Email= req.body.Email
+
+  
+  res.send(" First Name: " + firstname+ " Last Name: " + lastname+ " Email: " + Email+  " Address: " + Address + " Phone " + Phone)
+
+});
+
+*/
+
+
+
+module.exports = router;

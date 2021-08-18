@@ -1,0 +1,30 @@
+
+Queries
+
+Left values blank as that is what is entered on the page.
+
+Adding a booking 
+
+INSERT INTO bookings ( trainer_id, start_date_time, end_date_time, address_id) VALUES(‘””’)
+
+	assuming
+-	Client_id would be taken from login?
+-	Trainer_id taken from which trainer they have selected?
+-	Booking_status based on whether PT approves it?
+
+Adding new PT’s
+
+INSERT INTO trainers (first_name, last_name, email, password_hash, biography, date_of_birth, travel_radius, gender, prior_experience, muscle_group, lanaguages_spoken, training_location) VALUES (‘””’)
+
+
+	assuming
+-	Account status based on whether they have been approved and is entered by admin?
+-	EXTERNAL_ID Is taken from another table?
+-	
+INSERT INTO trainers (account_status) VALUES(‘””’)
+
+To display
+
+SELECT * FROM trainers
+
+

@@ -1,0 +1,51 @@
+{
+    "name": "PFTC3-REPO",
+    "version": "1.0.0",
+    "description": "PFTC3, SEP 2020 - Personal Trainers Club Website",
+    "main": "index.js",
+    "scripts": {
+        "server": "node server/routes/index.js",
+        "client": "cd client && npm run start",
+        "build:client": "cd client && npm run build",
+        "install_all": "npm i && cd client && npm i",
+        "startboth": "concurrently \"npm run client\" \"npm run server\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.cs.adelaide.edu.au/a1780927/PFTC3-REPO.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.32",
+        "@fortawesome/free-solid-svg-icons": "^5.15.1",
+        "@fortawesome/react-fontawesome": "^0.1.11",
+        "all": "0.0.0",
+        "axios": "^0.20.0",
+        "body-parser": "^1.19.0",
+        "concurrently": "^5.3.0",
+        "cookie-parser": "^1.4.5",
+        "cors": "^2.8.5",
+        "crypto": "^1.0.1",
+        "express": "^4.17.1",
+        "express-session": "^1.17.1",
+        "express-sessions": "^1.0.6",
+        "jsonwebtoken": "^8.5.1",
+        "mime": "^2.4.6",
+        "multer": "^1.4.2",
+        "mysql": "^2.18.1",
+        "react": "^16.14.0",
+        "react-addons-css-transition-group": "^15.6.2",
+        "react-dom": "^16.14.0",
+        "react-images-upload": "^1.2.8",
+        "react-modal": "^3.11.2",
+        "react-rainbow-components": "^1.17.0",
+        "react-router-dom": "^5.2.0",
+        "react-s3-uploader": "^4.9.3",
+        "react-select": "^3.1.0",
+        "reactstrap": "^8.6.0",
+        "recharts": "^1.8.5",
+        "styled-components": "^5.2.0"
+    }
+}

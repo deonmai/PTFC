@@ -1,0 +1,210 @@
+.ReactModal__Html--open,
+.ReactModal__Body--open {
+  overflow: hidden; 
+}
+
+.modal-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+
+
+.resultbackgrounddiv{
+    background-color: white;
+    margin-top: 200px;
+    margin-bottom:50px;
+    width: 100%;
+    
+}
+
+.search-and-filters-bg {
+    background-image: linear-gradient(45deg, #28524f,var(--primary));
+    overflow: hidden;
+    padding-top: 12em;
+    padding-bottom: 3em;
+}
+
+.pt_block_div{
+    height: 300px;
+    width: 95%;
+    padding: 30px;
+    display:flex;
+    background-color: white;
+    margin-bottom: 20px;
+    
+   
+}
+
+.pt_block_div:hover{
+    cursor:pointer;
+    box-shadow: 5px 5px 5px 5px rgb(194, 194, 194);
+   
+}
+
+.filter_and_ptresultdiv{
+    display: flex;
+}
+
+.filterdiv{
+    /* background-color: red; */
+    height: 600px;
+    width:20%;
+}
+
+.ptresultdiv{
+    width:80%;
+    /* padding-left: 50px; */
+    display: block;
+    margin: auto;
+}
+
+.resultblockrightdiv{
+    width:100%;
+    margin-left: 20px;
+}
+
+.ptresultheaddiv{
+    width:100%;
+    height: 45px;
+}
+
+.ptresultname{
+    font-size: 2vw;
+}
+
+.resultprofilepic{
+    
+    object-fit: cover;
+    height: 250px;
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+.ptblocklocation{
+    height: 100%;
+    color: rgb(48, 48, 48);
+    margin-right:20px;
+}
+
+.locationdiv{
+    width: 100%;
+    height: 15px;
+}
+
+.locationicon{
+    height: 100%;
+    margin-bottom: 3px;
+}
+
+.emailicon{
+    height: 100%;
+    
+}
+
+.ptresultemail{
+    height: 100%;
+    margin-right: 20px;
+}
+
+.ptresultphone{
+    height: 100%
+}
+
+.ptblockflexdiv{
+    display: flex;
+    width: 100%;
+    height: 15px;
+    margin-top:0;
+    margin-bottom:70px;
+}
+
+.ptblockflexleftdiv{
+    width: 200px;
+}
+
+.ptblockflexrightdiv{
+    width: 100%;
+}
+.blockmusclegrouplist{
+    display: inline;
+}
+
+.blockmusclegrouplist li{
+    display: inline;
+}
+
+.blockmusclegrouplist li:after{
+    display: inline;
+    content: ", ";
+}
+
+.blockmusclegrouplist li:last-child:after{
+    content: "";
+}
+
+.ptmodaldiv{
+    height: 70%;
+    width: 100%;
+    overflow:auto;
+    
+}
+
+.modalprofilepicdiv{
+    
+    
+    height: 250px;
+    width: 100%;
+    
+    display: flex;
+    
+    
+    
+}
+
+.modalprofilepic{
+    height: 250px;
+    width: 250px;
+    object-fit: cover;  
+}
+
+.modalnametitle{
+    text-align: center;
+    
+}
+
+.modalhr{
+    border-top: 4px solid #30a49c;
+    border-radius: 10px;
+}
+
+.ptblockmodalbooknowdiv{
+    /* position: fixed; */
+}
+
+.modalaboutmediv{
+    margin-left: 30px;
+    width:100%;
+}
+
+.aboutmetext{
+    color: rgb(104, 104, 104);
+    font-size: 1.5vw;
+}
+
+.aboutmecontent{
+    height:100%;
+    width:100%;
+}
+
+.modalcontentsdiv{
+    height: 100%;
+    width: 100%;
+}
+.modalcontentsdiv{
+    margin-top:20px;
+}
+.modalmusclegrouplist{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

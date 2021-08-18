@@ -1,0 +1,18 @@
+.requestbackgrounddiv{
+    background-color: white;
+    margin-top: 200px;
+    margin-bottom:50px;
+    width: 100%;
+}
+
+.requestpagecenterdiv{
+    width:80%;
+    /* background-color: red; */
+    height:400px;
+    margin: auto;
+}
+
+.pendingtext{
+    color: rgb(104, 104, 104);
+    font-size: 1.5vw;
+}

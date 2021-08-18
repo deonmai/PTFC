@@ -1,0 +1,107 @@
+/* This is the date picker css used on the modal calendar in PT Availability*/
+
+
+@keyframes slideInFromLeft { /* For cool heading animations yo */
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes chachaFromRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: 0.5rem;
+  font-family: "SB Heading", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  line-height: 1.2; }
+
+p, span, body {
+    font-family: "SB Body", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.main-heading { /* Copied from styles.css (Application from the react rainbow components cancels out the h1 styles)*/
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+    color: var(--secondary);
+    margin-top: 0.4em;
+    padding-left: 0.5em;
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 2.5rem;
+}
+
+.modal-heading{
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+
+.modal-general {
+    font-family: "SB Body", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.monthly-calendar {
+    text-align: center;
+    margin-top: 0;
+    padding-top: 3em;
+    padding-left: 5em;
+    padding-right: 5em;
+    padding-bottom: 5em;
+}
+
+.card-limiter {
+    margin-top: 0;
+    padding-top: 0;
+    margin: 3em;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ Table ]*/
+
+.drawer-limiter {
+    width: 30%;
+}
+
+.timetable {
+    text-align: center;
+    font-family: "SB Body", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.row-style {
+    padding: 1em;
+    border-bottom: 2px solid;
+    text-align : center;
+}
+
+.row-style:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+    border-bottom: 2px solid white;
+    transition: all 0.4s;
+    font-size: 25px;
+	-webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+
+.fine-print {
+    color: #999999;
+    font-size: 1em;
+    font-style: italic;
+}

@@ -1,0 +1,37 @@
+.Active_class {
+    margin: 0 0.5em;
+    color: #fff;
+    background-color: #28a745;
+}
+
+.Approval_class {
+    margin: 0 0.5em;
+    color: #fff;
+    background-color: #17a2b8;
+}
+
+.Rejected_class {
+    margin: 0 0.5em;
+    color: white;
+    background-color: #e79600;
+}
+
+.Suspended_class {
+    margin: 0 0.5em;
+    color: #fff;
+    background-color: #dc3545;
+}
+
+.status_badge {
+    padding: 0.4em 1.5em;
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 1000px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.active-btn {
+    background-color: red;
+    border-color: red;
+}

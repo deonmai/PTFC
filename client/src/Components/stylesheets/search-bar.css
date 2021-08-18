@@ -1,0 +1,205 @@
+/* This is the css for the search bar component (used in home page + search results page) */
+
+.tb /* This is for the alignment of the .animated-button */
+{
+    display: table;
+    width: 100%;
+}
+
+.td
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.animated-button
+{
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+    position: relative;
+    display: block;
+    width: 84px;
+    height: 96px;
+    cursor: pointer;
+}
+
+.search-bar-container
+{
+    position: relative;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 70em;
+    padding: 1em;
+    padding-left: 3em;
+    padding-right: 3em;
+    background-color: #3d3d3d;
+    border-radius: 80px;
+    box-shadow: 0 10px 40px #707070, 0 0 0 20px #ffffffeb;
+    transform: scale(0.6);
+}
+
+.mini-search-bar-container
+{
+    position: relative;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 70em;
+    padding-left: 3em;
+    margin-bottom: 2em;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px #28524f, 0 0 0 #388c86;
+    transform: scale(0.5);
+}
+
+.search-input {
+    color: #fff;
+    width: 100%;
+    font-size: 2.5em;
+    line-height: 0.5;
+    background-color: transparent;
+    font-family: "SB Body", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.mini-search-input {
+    color: #000;
+    width: 100%;
+    font-size: 2.5em;
+    line-height: 0.5;
+    margin-right: 15em;
+    padding-right: 1em;
+    background-color: transparent;
+    font-family: "SB Body", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.mini-search-input::placeholder {
+    color: var(--gray);
+}
+
+.search-input::placeholder
+{
+    color: #707070;
+}
+
+.mini-button-cover {
+    background-color: var(--secondary);
+    padding-left: 0;
+    padding-right: 1em;
+    border-radius: 0 15px 15px 0;
+}
+
+#s-cover
+{
+    width: 1px;
+    padding-left: 35px;
+}
+
+#s-circle
+{
+    position: relative;
+    top: -8px;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    margin-top: 0;
+    border-width: 10px;
+    border: 10px solid #fff;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: 0.5s ease all;
+}
+
+.animated-button span
+{
+    position: absolute;
+    top: 60px;
+    left: 30px;
+    display: block;
+    width: 30px;
+    height: 12px;
+    background-color: transparent;
+    border-radius: 5px;
+    transform: rotateZ(52deg);
+    transition: 0.5s ease all;
+}
+
+.animated-button span:before, .animated-button span:after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 10px;
+    transform: rotateZ(0);
+    transition: 0.5s ease all;
+}
+
+#s-cover:hover #s-circle
+{
+    top: -2px;
+    width: 65px;
+    height: 12px;
+    border-width: 0;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+#s-cover:hover span
+{
+    top: 50%;
+    left: 50px;
+    width: 25px;
+    margin-top: -9px;
+    transform: rotateZ(0);
+}
+
+#s-cover:hover .animated-button span:before
+{
+    bottom: 11px;
+    transform: rotateZ(52deg);
+}
+
+#s-cover:hover .animated-button span:after
+{
+    bottom: -11px;
+    transform: rotateZ(-52deg);
+}
+#s-cover:hover .animated-button span:before, #s-cover:hover .animated-button span:after
+{
+    right: -6px;
+    width: 40px;
+    background-color: #fff;
+}
+
+/* FILTER OPTIONS STYLING */
+.all-filters {
+    padding-left: 10px;
+    padding-top: 30px;
+    margin: auto;
+    border: 2px solid #3d3d3d;
+    border-radius: 25px;
+    padding-bottom: 0;
+    background-color: rgba(61,61,61,0.8);
+    max-width: 900px;
+    /* max-width: 200px; */
+}
+
+.location-filter {
+}
+
+.gender-filter {
+}
+
+.muscle_group-filter {
+}
+
+.language-filter {
+}

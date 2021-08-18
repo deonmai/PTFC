@@ -1,0 +1,169 @@
+//get request names are placeholders for now
+var express = require('express');
+var path = require('path');
+var router = express.Router();
+
+var mysql = require('mysql');
+
+var connection = mysql.createConnection( {
+  //properties
+  host:'localhost',
+  user: 'root',
+  password: '',
+  database: ''
+});
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+
+//get request example
+router.get('/listing', function(req, res){
+
+
+  //about mysql
+  connection.query("SELECT Name, locations, phone_number, email_address FROM Restaurant", function(error, rows, fields){
+    if(!!error){
+      console.log('Error in the query');
+    }else {
+      console.log('Successful query'); 
+      console.log(rows);
+      res.json(rows);
+      
+    }
+  });
+
+
+});
+
+//post request example
+router.post('/results.json', function(req, res, next) {
+
+  var cuisine = req.body.cuisine
+  var location = req.body.location
+
+
+var query ="SELECT Name, locations, phone_number, email_address, cuisine FROM Restaurant WHERE cuisine LIKE ?";
+
+  connection.query(query,[cuisine], function(error, rows, fields){
+    if(!!error){
+      console.log('Error in the query');
+    }else {
+      console.log('Successful query'); 
+      console.log(rows);
+      res.json(rows);
+    }
+
+
+  });
+});
+  
+///////////booking////////////////
+router.post('/submit-booking', (req, res) => {
+
+  const bookingdate = req.body.bookingdate
+ 
+	console.log('date: ' + req.body.bookingdate);
+ 
+  res.send(" date: "+ bookingdate)
+
+});
+
+///post then redirect examples
+router.post('/submit-review', (req, res) => {
+
+
+  const title = req.body.title
+  const content = req.body.content
+  const created_time = new Date();
+  
+  console.log('title: ' + req.body.title);  
+
+   console.log('Content: ' + req.body.content);
+
+      console.log('time: ' + req.body.created_time);  
+
+
+    connection.query("INSERT INTO reviewpost (title, content) VALUES ('"+req.body.title+"','"+req.body.content+"')",function(err, result)      
+{                                                      
+  if (err)
+     throw err;
+});
+res.redirect('/detail.html')
+});
+
+
+
+router.post('/submit-login', (req, res) => {
+  const Email = req.body.Email
+  const Password = req.body.Password
+	console.log('Email: ' + req.body.Email);
+  console.log('Password: ' + req.body.Password);
+
+  res.send(" Email: "+ Email+ " Password: " + Password)
+
+});
+
+///////////pt register table////////
+router.post('/submit-register', (req, res) => {
+
+
+  const  firstname= req.body.firstname
+  const lastname = req.body.lastname
+  const  Email1= req.body.Email1
+  const password = req.body.password
+  const password_confirm = req.body.password_confirm
+
+  connection.query("INSERT INTO trainers (first_name, last_name, email, password_hash, biography, date_of_birth, travel_radius, gender, prior_experience, muscle_group, lanaguages_spoken, training_location) VALUES ('"+req.body.firstname+"','"+req.body.lastname+"','"+req.body.password+"','"+req.body.Email1+"')",function(err, result)      
+{                                                      
+  if (err)
+     throw err;
+});
+
+  res.redirect('/index.html')
+});
+
+///not changed
+router.post('/submit-rregister', (req, res) => {
+
+
+   const  Rname= req.body.Rname
+  const Biography = req.body.Biography
+
+    const  Email1= req.body.Email1
+  const password = req.body.password
+  
+    const password_confirm = req.body.password_confirm
+
+    console.log('Restaurant name: ' + req.body.firstname);
+   console.log('Biography: ' + req.body.lastname);
+
+
+    console.log('Email: ' + req.body.Email1);
+   console.log('password: ' + req.body.password);
+
+  res.send(" Restaurant Name: " + Rname+ " Biography: " + Biography+ " Email: " + Email1+  " password: " + password + " password_confirm " + password_confirm)
+
+});
+
+////not changed
+router.post('/submit-account-details', (req, res) => {
+
+   const  firstname= req.body.firstname
+   const lastname = req.body.lastname
+   const  Address= req.body.Address
+   const  Phone= req.body.Phone
+   const  Email= req.body.Email
+
+  
+  res.send(" First Name: " + firstname+ " Last Name: " + lastname+ " Email: " + Email+  " Address: " + Address + " Phone " + Phone)
+
+});
+
+
+
+
+
+
+module.exports = router;
