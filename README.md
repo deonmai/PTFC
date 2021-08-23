@@ -1,9 +1,6 @@
 # SEP Personal Fitness Trainers Club - PFTC3 Repo
 This is the new develop branch with a React frontend and Express backend.
 
-Google drive folder link:
-https://drive.google.com/drive/folders/1mCPghORKzdH4iWn39HW-Gu5h7_x8O1kQ?usp=sharing
-
 ## How was this set up?
 1. <a href = https://reactjs.org/docs/create-a-new-react-app.html#create-react-app> Creating a React frontend </a>
 2. <a href = https://levelup.gitconnected.com/create-a-react-app-with-an-express-backend-24740b0a6f5e> Using a React frontend with an Express backend </a>
